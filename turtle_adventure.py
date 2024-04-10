@@ -432,14 +432,14 @@ class FastRunningEnemy(Enemy):
     def update(self) -> None:
         if self.__moving:
             if self.__direction == 1:
-                self.x += 20
+                self.x += 18
             else:
-                self.x -= 20
+                self.x -= 18
 
             if self.__vertical_direction == 1:
-                self.y += 20
+                self.y += 18
             else:
-                self.y -= 20
+                self.y -= 18
         if self.x >= self.game.screen_width or self.x <= 0:
             self.__direction *= -1
                 
@@ -502,7 +502,7 @@ class EnemyGenerator:
         num_random_enemy = 8
 
         for _ in range(num_fastrunning_enemies):
-            new_enemy = FastRunningEnemy(self.__game, 20, "red")
+            new_enemy = FastRunningEnemy(self.__game, 22, "red")
             random_x = random.randint(50, self.game.screen_width - 50)
             random_y = random.randint(50, self.game.screen_height - 50)
             new_enemy.x = random_x
